@@ -1,0 +1,1252 @@
+/* ---------- Root Variables ---------- */
+:root {
+
+  /*🎨 COLOR PALETTE (Light / Dark Base)*/
+  --color-bg-light: #fafafa;
+  --color-bg-dark: #0f0f0f;
+  --color-text-light: #333;
+  --color-text-dark: #fafafa;
+
+  /* 🟡 OFFLINE / BANNER COLORS*/
+  --banner-bg-light: #ffeeba;
+  --banner-text-light: #856404; 
+  --banner-border-light: #ffd24d;
+  --banner-hover-bg-light: #fff8dc;
+  --banner-hover-text-light: #5a4500;
+
+  --banner-bg-dark: #322c00;
+  --banner-text-dark: #f5e97f;
+  --banner-border-dark: #d6b900;
+  --banner-hover-bg-dark: #282200;
+  --banner-hover-text-dark: #ffee66;
+
+  /* 🌞 THEME ICON COLORS*/
+  --color-sun: #ff8c00;
+  --color-moon: #00e5ff;
+
+  /*⏱️ TRANSITIONS & TIMING*/
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  --anim-fast: 0.3s ease;
+  --anim-medium: 0.4s ease-out;
+  --anim-slow: 0.6s ease;
+
+  /*🟦 RADIUS & SHADOWS*/
+  --radius-sm: 6px;
+  --radius-md: 0.75rem;
+  --radius-lg: 18px;
+
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-dark-layered: 0 4px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.25);
+
+  /*✏️ INPUT STYLES*/
+  --color-input-bg: #ffffff;
+  --color-input-text: #333;
+  --color-input-border: #a0c4ff;
+  --color-input-border-focus: #90caf9;
+  --color-input-placeholder: #b0bec5;
+  --color-input-placeholder-dark: #888;
+  --color-input-bg-dark: #1e1e1e;
+  --color-input-text-dark: #f0f0f0;
+
+  /*➕ ADD BUTTON LIGHT COLORS  */
+  --color-btn-add: #2ECC71;                   /* used to be #66bb6a */
+  --color-btn-add-hover: #27AE60;             /* better hover */
+  --color-btn-add-disabled: #D5F5E3;          /* soft mint disabled */
+  --color-btn-add-disabled-text: #8F9A94;     /* subtle gray */
+  --color-btn-add-text: #0F2A22;              /* dark readable */
+
+  /* 🌙 ADD BUTTON DARK COLORS */
+  --color-btn-add-dark: #1F8F5B;              /* deep mint green */
+  --color-btn-add-dark-hover: #166E46;        /* darker hover */
+  --color-btn-add-dark-disabled: #1A1F1D;     /* muted dark-disabled */
+  --color-btn-add-dark-disabled-text: #7A8C84;/* soft gray-green */
+  --color-btn-add-dark-text: #EAFDF4;         /* bright readable */
+
+  /*🗂️ TASK ITEM COLORS*/
+  --color-task-bg: #fbe7c6;
+  --color-task-bg-hover: #f8d6a0;
+  --color-task-bg-dark: #2a2828;
+  --color-task-bg-hover-dark: #383838;
+  --color-task-text-dark: #e0e0e0;
+  --color-task-completed: #423838;
+
+  /*🧹 CLEAR ALL BUTTON*/
+  --color-btn-clear: #C9A7E8;           /* soft lavender */
+  --color-btn-clear-hover: #B889DD;     /* richer hover */
+  --color-btn-clear-dark: #8F6FC2;      /* deeper lavender for dark mode */
+  --color-btn-clear-dark-hover: #A68DE0;
+
+  /*🌈 ACCENT GRADIENT COLORS*/
+  --accent-start: #ff8a00;
+  --accent-mid: #e52e71;
+  --accent-end: #9b00ff;
+
+  /*🔔 TOAST SYSTEM BASE*/
+  --toast-transition: 0.4s ease;
+  --toast-transform: translateX(-50%) translateY(0);
+
+  /*🔔 TOAST TYPES (LIGHT)*/
+  --toast-add: #38a169;
+  --toast-delete: #fc2f2f;
+  --toast-edit: #3b82f6;
+  --toast-clear: #6c757d;
+  --toast-pin: #f57c00;
+  --toast-unpin: #e76f51;
+  --toast-complete: #6cbf84;
+  --toast-uncheck: #ffb84d;
+
+  /*🌑 TOAST TYPES (DARK)*/
+  --toast-add-dark: #2e7d32;
+  --toast-delete-dark: #c62828;
+  --toast-edit-dark: #1565c0;
+  --toast-clear-dark: #495057;
+  --toast-pin-dark: #ef6c00;
+  --toast-unpin-dark: #d84315;
+  --toast-complete-dark: #388e3c;
+  --toast-uncheck-dark: #ff9800;
+}
+
+
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+/* === Offline Banner === */
+.offline-banner {
+  position: relative;
+  background-color: var(---banner-bg-light);
+  color: var(--banner-text-light);
+  padding: 1rem 1rem 0.6rem 1rem;
+  margin: 0.8rem auto 0.5rem auto;
+  max-width: 600px;
+  border: 1px solid var(--banner-border-light);
+  border-radius: var(--radius-md);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-medium);
+  z-index: 99;
+  backdrop-filter: blur(4px);
+}
+
+.close-banner {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  border: 1px solid var(--banner-text-light);
+  border-radius: 50%;
+  background-color: #fffdf5;
+  color: var(--color-banner-text);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.close-banner:hover {
+  background-color: var(--banner-hover-bg-light);
+  color: var(--banner-hover-text-light);
+}
+
+/* 🌙 Dark Mode Banner */
+body.dark-mode .offline-banner {
+  background-color: var(---banner-bg-dark);
+  color: var(--banner-text-dark);
+  border-color: var(--banner-border-dark);
+  box-shadow: 0 2px 6px rgba(255, 255, 100, 0.2);
+  /* kept subtle glow */
+}
+
+body.dark-mode .close-banner {
+  background-color: #1a1800;
+  color: var(--banner-text-dark);
+  border-color: #b3a200;
+}
+
+body.dark-mode .close-banner:hover {
+  background-color: var(--banner-hover-bg-dark);
+  color: var(--banner-hover-text-dark);
+}
+
+/* ---------- Body & Theme ---------- */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+
+body.dark-mode {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+/* ---------- App Container ---------- */
+.app-container {
+  background-color: #c6e3f0;
+  /* mint pastel */
+  padding: 24px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 600px;
+  height: 87vh;
+  max-height: 87vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  transition: background-color var(--transition-slow), color var(--transition-slow), box-shadow var(--transition-medium);
+}
+
+body.dark-mode .app-container {
+  background-color: #1c1c1c;
+  color: #eaeaea;
+  box-shadow: var(--shadow-dark-layered);
+}
+
+/* ---------- Headings ---------- */
+h1,h2,h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 8px 0 2px;
+  text-align: center;
+  color: #2a2a2a;
+  font-family: monospace, 'Open Sans', sans-serif;
+  animation: fadeSlideIn 0.3s backwards;
+}
+
+body.dark-mode h1 {
+  color: var(--color-text-dark);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  position: relative;
+}
+
+/* Center title even when flex is split */
+.app-header h1 {
+  flex: 1;
+  text-align: left;
+  /* move title + subtitle left */
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Subtext below title */
+.app-header h1::after {
+  content: "Focus. Prioritize. Finish.";
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  opacity: 0.8;
+  margin-left: 4px;
+}
+
+body.dark-mode .app-header h1::after {
+  color: #bbb;
+}
+
+
+/* Right-side icons container */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
+  position: relative;
+}
+
+/* Modern vertical divider */
+.header-actions .divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+  margin: 0 6px 0 3px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .header-actions .divider {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove absolute from theme toggle */
+#themeToggle {
+  color: inherit;/* automatically adapts with light/dark text */
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease;
+  position: static; /* ✅ was absolute */
+}
+
+/* Color Theme Button */
+#colorThemeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+#colorThemeBtn:hover,
+#themeToggle:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+#themeToggle,
+#colorThemeBtn {
+  outline: none;
+}
+
+#themeToggle:focus-visible,
+#colorThemeBtn:focus-visible {
+  outline: 2px solid var(--accent-mid); /* only for keyboard users */
+  outline-offset: 3px;
+}
+
+/* ---------- Color Theme FAB ---------- */
+/* --- FAB container --- */
+.color-theme-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* --- FAB hidden by default --- */
+.color-fab {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  right: 40px; /* just left of the main palette button */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* --- When expanded --- */
+.color-theme-wrapper.active .color-fab {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Color FAB: exact light colors + dark equivalents ---------- */
+/* Base FAB circle styling */
+.fab-color {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Hover effect */
+.fab-color:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.fab-color:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 3px;
+}
+
+body.dark-mode .fab-color:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ✨ Selected state (light mode) with pulse */
+.fab-color.selected {
+  transform: scale(1.15);
+  animation: fabPulse 2.4s ease-in-out 0s 60;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08),
+    0 0 12px rgba(0, 0, 0, 0.2),
+    0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌙 Dark mode base */
+body.dark-mode .fab-color {
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌌 Dark mode selected with subtle white pulse */
+body.dark-mode .fab-color.selected {
+  transform: scale(1.15);
+  animation: fabPulseDark 2.4s ease-in-out 0s 60;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1),
+    0 0 12px rgba(255, 255, 255, 0.25),
+    0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* 💎 Pulse keyframes */
+@keyframes fabPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08),
+      0 0 12px rgba(0, 0, 0, 0.2),
+      0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.15),
+      0 0 18px rgba(0, 0, 0, 0.25),
+      0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes fabPulseDark {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1),
+      0 0 12px rgba(255, 255, 255, 0.25),
+      0 4px 14px rgba(0, 0, 0, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.18),
+      0 0 18px rgba(255, 255, 255, 0.35),
+      0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+
+/* 🌤️ Light mode colors */
+/* ⚠️ Order-dependent: must match JS color array sequence */
+.fab-color:nth-child(1) {
+  background-color: #f8c8dc;
+}
+
+/* Pink */
+.fab-color:nth-child(2) {
+  background-color: #b3e5fc;
+}
+
+/* Blue */
+.fab-color:nth-child(3) {
+  background-color: #c8e6c9;
+}
+
+/* Green */
+.fab-color:nth-child(4) {
+  background-color: #fff9c4;
+}
+
+/* Yellow */
+
+/* --- Dark mode refined colors --- */
+body.dark-mode .fab-color:nth-child(1) {
+  background-color: #2e2a4a;
+}
+
+/* muted indigo */
+body.dark-mode .fab-color:nth-child(2) {
+  background-color: #1e3a5f;
+}
+
+/* navy blue */
+body.dark-mode .fab-color:nth-child(3) {
+  background-color: #224b35;
+}
+
+/* dark forest green */
+body.dark-mode .fab-color:nth-child(4) {
+  background-color: #5a3d2b;
+}
+
+/* coffee brown */
+
+
+/* Icon appearance */
+.theme-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* or flex-end if it’s on the right */
+  gap: 10px;  /* space between icons */
+  color: var(--color-text-light);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+body.dark-mode .theme-icon {
+  color: var(--color-text-dark);
+}
+
+
+#sunIcon {
+  opacity: 1;
+  transform: scale(1.2);
+  color: var(--color-sun);
+  filter: drop-shadow(0 0 4px #f7cc22) drop-shadow(0 0 8px #ffe476);
+  margin-top: 1px;  /* fine alignment */
+  margin-right: -14px;
+}
+
+#moonIcon {
+  opacity: 0;
+  transform: scale(0.5);
+  color: var(--color-moon);
+  filter: drop-shadow(0 0 5px #00e5ff) drop-shadow(0 0 10px #00e5ff) drop-shadow(0 0 15px #00bfff) drop-shadow(0 0 20px #00ffff);
+  margin-top: 7px;  /* pushes slightly down to align with sun */
+}
+
+body.dark-mode #sunIcon {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+body.dark-mode #moonIcon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+body.dark-mode {
+  --accent-start: #ff8a00;
+  --accent-mid: #e52e71;
+  --accent-end: #9b00ff;
+  --color-task-completed: #efefff;
+}
+
+/* ---------- Input Section ---------- */
+.input-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 16px;
+  background-color: var(--color-input-bg);
+  color: var(--color-input-text);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-lg);
+  transition: border var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+#taskInput::placeholder {
+  color: var(--color-input-placeholder);
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: var(--color-input-border-focus);
+  box-shadow: 0 0 5px rgba(144, 202, 249, 0.5);
+}
+
+body.dark-mode #taskInput {
+  background-color: var(--color-input-bg-dark);
+  color: var(--color-input-text-dark);
+  border-color: #555;
+}
+
+body.dark-mode #taskInput::placeholder {
+  color: var(--color-input-placeholder-dark);
+}
+
+/* ---------- Add Button ---------- */
+#addBtn {
+  padding: 12px 20px;
+  background-color: var(--color-btn-add);
+  color: var(--color-btn-add-text);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background-color var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#addBtn:hover {
+  background-color: var(--color-btn-add-hover);
+}
+
+#addBtn:disabled {
+  background-color: var(--color-btn-add-disabled);
+  color: var(--color-btn-add-disabled-text);
+  cursor: not-allowed;
+}
+
+body.dark-mode #addBtn {
+  background-color: var(--color-btn-add-dark);
+  color: var(--color-btn-add-dark-text);
+}
+
+body.dark-mode #addBtn:hover {
+  background-color: var(--color-btn-add-dark-hover);
+}
+
+body.dark-mode #addBtn:disabled {
+  background-color: var(--color-btn-add-dark-disabled);
+  color: var(--color-btn-add-dark-disabled-text);
+}
+
+/* ---------- Visually Hidden ---------- */
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ---------- Task Section ---------- */
+.task-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  min-height: 0;
+  position: relative;
+}
+
+.task-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-section::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+body.dark-mode .task-section::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.task-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(198, 227, 240, 0), #c6e3f0);
+}
+
+body.dark-mode .task-section::after {
+  background: linear-gradient(to bottom, rgba(28, 28, 28, 0), #1c1c1c);
+}
+body.dark-mode {
+  --shadow-light: 0 1px 6px rgba(0,0,0,0.6);
+}
+
+/* ---------- Task List ---------- */
+ul#taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 100%;
+  padding: 0 4px 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Scrollbar Styling */
+ul#taskList::-webkit-scrollbar {
+  width: 5px;
+}
+
+ul#taskList::-webkit-scrollbar-thumb {
+  background-color: #ff8c00;
+  border-radius: var(--radius-md);
+  transition: background-color 0.3s ease;
+}
+
+ul#taskList::-webkit-scrollbar-thumb:hover {
+  background-color: #ffa726;
+}
+
+body.dark-mode ul#taskList::-webkit-scrollbar-thumb {
+  background-color: var(--color-moon);
+}
+
+body.dark-mode ul#taskList::-webkit-scrollbar-thumb:hover {
+  background-color: #00bcd4;
+}
+
+/* ---------- Task Items ---------- */
+#taskList li {
+  background-color: var(--color-task-bg);
+  padding: 10px 6px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-medium);
+}
+
+#taskList li:hover {
+  background-color: var(--color-task-bg-hover);
+}
+
+body.dark-mode #taskList li {
+  background-color: var(--color-task-bg-dark);
+  color: var(--color-task-text-dark);
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode #taskList li:hover {
+  background-color: var(--color-task-bg-hover-dark);
+}
+
+/* ---------- Task Content ---------- */
+.task-item{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.task-item input[type="checkbox"] {
+  transform: scale(1.2);
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.task-number {
+  margin-top: 0.3em;
+  width: 24px;
+  text-align: right;
+  font-weight: bold;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.task-text {
+  flex: 1;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-word;
+  white-space: pre-wrap;
+  padding: 0 2px;
+  margin-top: 0.1em;
+}
+.edit-input:focus {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.12);
+}
+.task-item.edit-saved {
+  animation: edit-saved 700ms ease;
+}
+/* ---------- Edit Input ---------- */
+.edit-input {
+  font-size: 1rem;
+  padding: 6px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 2px solid #575757;
+  background-color: var(--color-input-bg);
+  color: #000;
+  outline: none;
+  transition: box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+body.dark-mode .edit-input {
+  background-color: #111;
+  border-color: #333;
+  color: #f1f1f1;
+}
+
+/* ---------- Task States ---------- */
+/* --- Completed Task Animation --- */
+.completed {
+  position: relative;
+  text-decoration: none;  /* prevent instant line-through */
+  opacity: 0.6;
+  color: var(--color-task-completed, #b0b0b0);
+  font-style: italic;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animated gradient line (strike-through effect) */
+.completed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 65%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      var(--accent-start, #ff8a00),
+      var(--accent-mid, #e52e71),
+      var(--accent-end, #9b00ff));
+  border-radius: 2px;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease, background 0.3s ease;
+  pointer-events: none;
+}
+
+/* When active, show the animated line */
+.completed.active::after {
+  transform: translateY(-50%) scaleX(1);
+}
+
+/* Optional hover effect to slightly brighten text */
+.task-item:hover.completed {
+  opacity: 0.8;
+}
+
+
+/* ---------- Task Buttons ---------- */
+#taskList button {
+  background: transparent;
+  color: #424242;
+  border: none;
+  padding: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-medium), transform var(--transition-medium);
+  transform: scale(0.9);
+}
+
+#taskList button:hover {
+  transform: scale(1.2);
+}
+#taskList button:focus-visible {
+  outline: 2px solid var(--accent-mid);
+  outline-offset: 2px;
+}
+
+body.dark-mode #taskList button {
+  color: #c0c0c0;
+}
+
+body.dark-mode #taskList button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#taskList button i {
+  width: 20px;
+  height: 20px;
+  font-size: 1.1rem;
+  color: #262626;
+  transition: color var(--transition-medium);
+}
+
+/* Hover Effects by Type */
+#taskList button:hover {
+  background: transparent;
+}
+
+#taskList button.edit-btn:hover { color: #1976D2; }
+#taskList button.delete-btn:hover { color: #D32F2F; }
+#taskList button.pin-btn:hover { color: #000; }
+
+
+/* Pin Button */
+.pin-btn {
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+#taskList button.pin-btn.pinned {
+  color: #f57c00;
+}
+.pin-btn:active {
+  transform: scale(0.92);
+}
+/* Extra visual distinction for pinned */
+.pin-btn.pinned {
+  transform: rotate(-12deg);
+}
+
+/* Pulse micro-animation when pin/unpin happens */
+.pin-btn.pulse {
+  animation: pin-pulse 380ms ease;
+}
+
+/* ---------- Clear All Button ---------- */
+#clearAllBtn {
+  margin: 5px 0 6px 0;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background-color: var(--color-btn-clear);
+  color: black;
+  transition: background-color var(--transition-medium);
+}
+
+#clearAllBtn:hover {
+  background-color: var(--color-btn-clear-hover);
+}
+
+body.dark-mode #clearAllBtn {
+  background-color: var(--color-btn-clear-dark);
+  color: #f5f5f5;
+}
+
+body.dark-mode #clearAllBtn:hover {
+  background-color: var(--color-btn-clear-dark-hover);
+}
+
+
+/* ================
+   🌀 ANIMATIONS
+   ================ */
+
+/* Fade Animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Disintegrate (Delete) */
+@keyframes disintegrate {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); filter: blur(0px); }
+  50% { transform: translateY(-10px) rotate(10deg); opacity: 0.5; }
+  100% { transform: translateY(40px) rotate(-20deg); opacity: 0; filter: blur(4px); }
+}
+
+/* Add Pop */
+@keyframes addPop {
+  0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+  60% { transform: translateY(-5px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Edit Flip */
+@keyframes flipEdit {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+/* Clear Scatter */
+@keyframes scatter {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0); }
+  100% { opacity: 0; transform: translate(var(--x, 100px), var(--y, -100px)) rotate(720deg); }
+}
+
+/* Floating */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes add-in {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes edit-saved {
+  0% { background-color: rgba(255, 235, 204, 0.0); }
+  30% { background-color: rgba(255, 235, 204, 0.85); }
+  100% { background-color: transparent; }
+}
+
+@keyframes pin-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes delete-out {
+  0% { opacity: 1; transform: translateX(0) scale(1) rotate(0); height: auto; margin: var(--orig-margin, 0.5rem 0); }
+  60% { opacity: .25; transform: translateX(18px) scale(.98) rotate(-2deg); }
+  100% { opacity: 0; transform: translateX(30px) scale(.96) rotate(-3deg); height: 0; margin: 0; padding: 0; }
+}
+/* ================
+   🎬 TASK ITEM ANIMATIONS
+   ================ */
+.task-item.add-animate {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  animation: add-in 320ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+.task-item.delete-animate {
+  animation: delete-out 480ms cubic-bezier(.2,.8,.2,1) forwards;
+  transform-origin: left center;
+}
+.task-item.edit-animate { animation: flipEdit 0.5s ease-in-out; }
+.task-item.clear-animate { animation: scatter var(--anim-slow) ease forwards; }
+
+.fade-out { animation: fadeOut var(--anim-fast) forwards; }
+
+/* ================
+   🔔 TOAST STYLES
+   ================ */
+
+/* Toast Base */
+.toast {
+  visibility: hidden;
+  max-width: 90vw;
+  word-wrap: break-word;
+  margin: 10px auto;
+  background-color: #a0e7e5;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 999;
+  opacity: 0;
+  line-height: 1.2;
+  pointer-events: none;
+  transition: opacity var(--toast-transition), visibility var(--toast-transition), transform 0.3s ease;
+}
+
+/* Show State */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: var(--toast-transform);
+  pointer-events: auto;
+}
+
+/* Toast Types */
+.toast-add { background-color: var(--toast-add); }
+.toast-delete { background-color: var(--toast-delete); }
+.toast-edit { background-color: var(--toast-edit); }
+.toast-clear { background-color: var(--toast-clear); }
+.toast-pin { background-color: var(--toast-pin); transition: background-color 0.3s, color 0.3s; }
+.toast-unpin { background-color: var(--toast-unpin); transition: background-color 0.3s, color 0.3s; }
+.toast-complete { background-color: var(--toast-complete); }
+.toast-uncheck { background-color: var(--toast-uncheck); }
+
+.toast:not(.toast-complete):not(.toast-uncheck) { color: #fff; }
+.toast-complete, .toast-uncheck { color: #000; }
+
+/* Dark Mode Toasts */
+body.dark-mode .toast {
+  background-color: #333;
+  color: #eee;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .toast-add { background-color: var(--toast-add-dark); }
+body.dark-mode .toast-delete { background-color: var(--toast-delete-dark); }
+body.dark-mode .toast-edit { background-color: var(--toast-edit-dark); }
+body.dark-mode .toast-clear { background-color: var(--toast-clear-dark); }
+body.dark-mode .toast-pin { background-color: var(--toast-pin-dark); }
+body.dark-mode .toast-unpin { background-color: var(--toast-unpin-dark); }
+body.dark-mode .toast-complete { background-color: var(--toast-complete-dark); }
+body.dark-mode .toast-uncheck { background-color: var(--toast-uncheck-dark); }
+
+/* ================
+   🌗 SECTION DIVIDER
+   ================ */
+.section-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #6c9edb 10%, #a1b6f3 55%, #b2c9ff 110%);
+  margin: 10px 0;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+.section-divider:last-of-type { margin-top: 6px; }
+body.dark-mode .section-divider {
+  background: linear-gradient(90deg, #444, #555 30%, #666 70%, #777);
+}
+
+/* ================
+   ⚡ FOOTER
+   ================ */
+.app-footer {
+  text-align: center;
+  padding: 4px 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.75rem;
+  color: #555;
+  margin: 0;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+body.dark-mode .app-footer { color: #ccc; }
+
+.app-footer p { margin: 0; display: inline-block; }
+
+.footer-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 2px;
+}
+
+.app-footer a svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.7;
+  vertical-align: text-bottom;
+  color: #383838;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+body.dark-mode .app-footer a svg { color: #aaa; }
+
+.app-footer a[aria-label="GitHub"]:hover svg {
+  color: #000;
+  transform: scale(1.15);
+}
+.app-footer a[aria-label="LinkedIn"]:hover svg {
+  color: #0077b5;
+  transform: scale(1.15);
+}
+.app-footer a:hover { opacity: 0.9; }
+
+/* ================
+   🧼 EMPTY STATE
+   ================ */
+.empty-state {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0.9;
+}
+.empty-state img {
+  width: 230px;
+  max-width: 80%;
+  margin-bottom: 0.5rem;
+  animation: float 4s ease-in-out infinite;
+}
+.empty-state p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #666;
+  opacity: 0.9;
+}
+.empty-state .keyword {
+  color: #4CAF50;
+  font-weight: 500;
+}
+#quoteText { transition: opacity 0.5s ease; opacity: 1; }
+
+/* ================
+   🌿 FEW TASKS BANNER
+   ================ */
+.few-tasks-banner {
+  display: none;
+  text-align: center;
+  margin: 1rem auto 0 auto;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--text-muted, #777);
+  animation: fadeIn 1s ease-in-out;
+  padding: 0.5rem 1rem;
+  background-color: rgba(76, 175, 80, 0.07);
+  border-left: 3px solid #4CAF50;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 500px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ================
+   📱 RESPONSIVE TWEAKS
+   ================ */
+@media (max-width: 480px) {
+  body { padding: 20px; }
+  .app-container { padding: 22px 18px; }
+  .input-section { flex-direction: column; gap: 10px; }
+
+  #taskInput, #addBtn { font-size: 15px; padding: 10px; }
+  h1 { font-size: 22px; }
+
+  #themeToggle { width: 36px; height: 36px; top: 16px; right: 16px; }
+  .theme-icon { width: 20px; height: 20px; }
+
+  #taskList li { padding: 8px 4px; font-size: 15px; }
+  #taskList button i { width: 18px; height: 18px; }
+
+  #clearAllBtn { font-size: 14px; padding: 8px 16px; }
+  .toast { font-size: 14px; padding: 10px 16px; }
+}
+
+/* ================
+   🚫 REDUCED MOTION SUPPORT
+   ================ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0s !important; transition-duration: 0s !important; }
+  .task-item, .empty-state img, .few-tasks-banner {
+    animation: none !important;
+    transition: none !important;
+  }
+}
