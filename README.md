@@ -1,4 +1,4 @@
-# 📝 Modular To-Do App  
+# 📝 list To-Do App  
 
 👉 Live Demo: https://sushantshinde7.github.io/modular-todo-js/  
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat)
